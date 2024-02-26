@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}profile page{% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+
+<table class="table mt-4">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in borrow %}
+        <tr>
+          <td>{{i.book.id}}</td>
+          <td>{{i.book.name}}</td>
+          <td>{{i.book.price}}</td>
+          <td>{{i.borrow_date}}</td>
+          <td>
+              <a href="{% url 'return' i.id %}">Return</a>
+          </td>  
+        </tr>
+        {% endfor %}
+      </tbody>
+  </table>
+
+{% endblock %}

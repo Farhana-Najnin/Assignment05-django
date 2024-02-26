@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+
+<div class="w-50 m-auto mb-4 mt-4">
+    <form action="" method="post">
+        <h4 class="text-center">Deposite Money</h4>
+        {% csrf_token %}
+        {{form | crispy}}
+        <button class="p-1 btn btn-info" type="submit">submit</button>
+    </form>
+</div>
+
+{% endblock %}
