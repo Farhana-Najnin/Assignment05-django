@@ -16,11 +16,13 @@
 </div>
 {% if request.user.is_authenticated %}
 <div class="pt-4">
-    
+    <h3 class="text-center fw-bolder"> You are verified user ,now you can borrow books </h3>
+  
 </div>
 {% else %}
 <div class="pt-2">
-
+    
+    <h2 class="text-center">You need to login first to borrow books</h2>
 </div>
 {% endif %}
 <div class="h-50 d-flex flex-wrap px-3 pt-5">
@@ -35,7 +37,7 @@
                     <h3 class="card-title"><a class="text-decoration-none text-danger"  href="{% url 'book_details' i.id %}">{{i.name}}</a></h3>
                     <h6>Price : {{i.price}} tk</h6> 
                    <p class="card-text">Quantity : {{i.quantity}}</p>
-                   <p class="card-text">Category: {{i.categories}}</p>
+                   <p class="card-text">Category: {{i.category}}</p>
                    <p class="card-text">Description : {{i.description | truncatewords:5}}</p>
                 </div> 
             </div>

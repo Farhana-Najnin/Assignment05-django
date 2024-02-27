@@ -4,7 +4,7 @@
 {% block content %}
 
 <div class="col-12">
-    <div class="card " style="background-color: rgb(217, 197, 168);">
+    <div class="card " style="background-color: #E0C6CB;">
         <div class="card-body rounded mt-3 ">
             <img src="{{object.image.url}}" class="card-img-top rounded w-75" alt="book">
             <div class="card-body" style="background-color: darkgray; margin-top: 5px;">
@@ -16,7 +16,7 @@
             </div>
             {% if request.user.is_authenticated %}
             <div class="card-body">
-              <a class="card-link btn btn-success text-decoration-none" href="{% url 'borrow' object.id %}">Borrow</a>
+              <a class="card-link btn btn-warning text-decoration-none" href="{% url 'borrow' object.id %}">Borrow book</a>
             </div>
             {% endif %}
           </div>
@@ -33,7 +33,7 @@
     {%endfor%}
 </div>
 
-<div class="card m-2 " style="background-color: rgb(175, 202, 202);">
+<div class="card m-2 " style="background-color: rgb(206, 227, 241);">
     <div class="card_body m-3 w-75 ">
         <form method="post" class="">
             {% csrf_token %}
